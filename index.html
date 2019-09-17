@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admiral Nation</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="Branding/Favicon.png" />
+    <link rel="stylesheet" href="vivify.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="manifest" href="manifest.json">
+    <meta name="Description"
+        content=" The mission of the Admiral Nation store is to be able to provide sporty and on trend apparel to the students and community of Gulfport High school, while also providing a unique and realistic learning experience for Gulfport students leaning toward studying business. The store allows for the promotion of school spirit with readily available apparel for every GHS student and community member, promoting our unique school and our love for GHS athletics. ">
+    <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON('https://api.sheety.co/08786f05-07e1-44d9-b3f8-e0e776b3990d', function (data) {
+                var template = Handlebars.compile($('#item-template2').html())
+                $('#items2').html(template(data))
+            })
+        })
+    </script>
+ <script type="text/javascript">
+    $(document).ready(function () {
+        $.getJSON('https://api.sheety.co/08786f05-07e1-44d9-b3f8-e0e776b3990d', function (data) {
+            var template = Handlebars.compile($('#item-template').html())
+            $('#items1').html(template(data))
+        })
+    })
+</script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script id="item-template" type="text/x-handlebars-template">
+
+  
+    <div class="carousel-cellimg  delay-150">
+        
+    {{#each this}}
+
+
+ 
+<style>
+#{{iD1}} {display:none;}
+
+#{{iD1}}:target {display:block;}
+</style>
+      
+            <div class="item-container filterDiv {{category}}">
+                   {{{image}}}<h3>{{itemName}}</h3><p>{{price}}</p>   <div class="shop-btn-container"><a class="shop-btn" href="#{{iD1}}">Shop</a></div></div>
+      
+         <div id="{{iD1}}" class="item-popup">
+        
+             <div class="popup-container vivify fadeInBottom duration-300">
+                    <a href="#shop"><i class="material-icons">close</i></a>
+            <div class="image-popup">
+                    {{{image}}}
+            </div>  
+
+         <div class="basic-text">
+             <h3>{{itemName}}</h3>
+             <p>{{price}}</p>
+             <div class="size-options">
+                <div class="Sizes {{small}}"><p>S</p></div>
+                <div class="Sizes {{medium}}"><p>M</p></div>
+                <div class="Sizes {{large}}"><p>L</p></div>
+                <div class="Sizes {{xLarge}}"><p>XL</p></div>
+                <div class="Sizes {{xXLarge}}"><p>XXL</p></div>
+            </div>
+            <div class="description">{{description}}</div>
+       
+            
+
+                
+                <div class="form-container vivify fadeIn duration-200">
+                <div class="pickup-form" id="{{iD2}}">
+                        <h3>Order For Pickup</h3>
+                            <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSdEPTYEQmsVLSRjeabz0ENtYO9XetfUm3MyIM_nekYt2rRqEw/formResponse" method="POST" target="_self">
+                                <input name="entry.838953622" style="display: none;" type="text" placeholder="{{itemName}}">
+                                <div class="pickupgroup" style="margin-left: 0px;">  
+                                    <label>Enter Your Name</label>
+                                <br>
+                               
+                                <input name="entry.424118168" class="pickupinput half-input" type="text" placeholder="Your Name">
+                            </div>
+                            <div class="pickupgroup">
+                                <label>Enter Your E-Mail</label>
+                                <br>
+                           
+                                <input name="entry.1881122601" class="pickupinput half-input" type="email" placeholder="Your E-Mail">
+                            </div>
+                                <br>
+                                <label>Pickup Date / Time</label>
+                                <input entry.199026238 class="pickupinput" type="date">
+                                <br>
+                               
+                                <input class="pickupinput" type="time">
+                                <label>Choose A Size</label>
+                                <br>
+                                <select class="filter forform" id = "myList">
+                                        <option>Select Size</option>
+                                        <option class="{{small}}" value = "small">Small</option>
+                                        <option class="{{medium}}" value = "medium">Medium</option>
+                                        <option class="{{large}}" value = "large">Large</option>
+                                        <option class="{{xLarge}}" value = "xlarge">XLarge</option>
+                                      </select>
+                             <br>
+                             <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+  <script>
+  grecaptcha.ready(function() {
+      grecaptcha.execute('6LcjvLgUAAAAAMZl--1DLrzHho1o5dfCYSIT_okP', {action: 'homepage'}).then(function(token) {
+         ...
+      });
+  });
+  </script>
+                             <div class="submit-container">
+                                <button type="submit">Complete Order</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+     
+                </div>
+              
+
+               
+            </div>
+
+           
+         </div>
+
+
+{{/each}}
+
+    </div>          
+
+        
+
+</script>
+    <script id="item-template2" type="text/x-handlebars-template">
+        <div class="wrapper-search altsrc">
+            <img src="Assets/ic_search_24px.svg"><input type="text" id="myInput" onkeyup="myFunction()"
+                placeholder="Search for Apparel" title="Type in a Item">
+                <ul class="vivify fadeIn" id="myUL">
+            
+        {{#each this}}
+    
+    
+        <li>
+            <a href="#{{iD1}}">{{itemName}}
+            </a>
+    
+        </li>
+    
+    
+    {{/each}}
+    </ul>
+                  
+    </div>
+                   
+              
+    
+    </script>
+</head>
+
+<body>
+
+
+    <style>
+
+    </style>
+
+    <nav><img class="menu" id="menu" src="Assets/outline-menu-24px (1).svg">
+        <a href="index.html"><img src="Branding/admiralnationdotcom Logo.png"></a>
+        <ul id="items">
+            <a href="index.html">
+                <li class="vivify fadeIn delay-100 active">Home</li>
+            </a>
+            <a href="All.html">
+                <li class="vivify fadeIn delay-150">Shop All</li>
+            </a>
+            <a href="clearence.html">
+                <li class="vivify fadeIn delay-150">Clearance</li>
+            </a>
+            <a href="https://goo.gl/maps/uRVhnmNfig32" target="_blank">
+                <li class="vivify fadeIn delay-150">Find Us</li>
+            </a>
+
+
+        </ul>
+
+        <div id="items2"></div>
+    </nav>
+
+    <div id="items1"></div>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+
+    <div class="socialicons">
+        <a href="https://www.snapchat.com/add/admiralnation" target="_blank"><img style="right: 190px;"
+                src="Branding/Snapchat Logo.svg"></a>
+        <a href="https://www.instagram.com/admiral_nation/?utm_source=ig_profile_share&igshid=1ehxczpkif6wd"
+            target="_blank"><img style="right: 250px;" src="Branding/Instagram%20Logo.svg"> </a>
+        <a href="https://twitter.com/GHSstore" target="_blank"><img style="right: 310px;"
+                src="Branding/Twitter%20Logo.svg"></a>
+    </div>
+
+
+    <script>
+        var toggle = document.getElementById("menu");
+        var content = document.getElementById("items");
+        toggle.addEventListener("click", function () {
+            content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
+        });
+    </script>
+
+  
+
+
+
+
+
+
+    <div class="popupm vivify popOut delay-5250" style="display:none;">
+        <h4>Find 50% Off Items In Clearence! 😃</h4>
+    </div>
+
+
+    <footer>
+        <h3> ©2018 Admiral Nation</h3>
+    </footer>
+
+</body>
+
+
+
+
+</html>
